@@ -1,4 +1,4 @@
-package com.br.inatel.gamestore;
+package br.com.inatel.gamestore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

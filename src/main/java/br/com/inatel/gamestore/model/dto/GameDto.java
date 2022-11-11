@@ -1,25 +1,21 @@
-package com.br.inatel.gamestore.model.entity;
+package br.com.inatel.gamestore.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Data
-@Entity
-public class Game {
+public class GameDto {
 
-    @Id
-    private String code;
     private String name;
     private String company;
     private Integer releasedYear;
     private Double price;
+    private String imageUrl;
 }
