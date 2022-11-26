@@ -21,10 +21,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+<<<<<<< HEAD
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
+=======
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+>>>>>>> 79159e92c0847dbb79d75ab320e6a33186f0a828
         distribution: 'temurin'
         cache: maven
     - name: Test with Maven
