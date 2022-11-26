@@ -1,4 +1,6 @@
 
+[![GameStore](https://github.com/JuninhoCarvalho/Game-Store/actions/workflows/maven.yml/badge.svg)](https://github.com/JuninhoCarvalho/Game-Store/actions/workflows/maven.yml)
+
 <div align="center">
 <h1>Game Store Application</h1>
 
