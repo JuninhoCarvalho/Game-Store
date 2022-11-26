@@ -1,7 +1,6 @@
 package br.com.inatel.gamestore.service;
 
 import br.com.inatel.gamestore.exception.GameNotFound;
-import br.com.inatel.gamestore.exception.GameNotFoundForThisCompanyException;
 import br.com.inatel.gamestore.model.dto.GameDto;
 import br.com.inatel.gamestore.model.entity.Game;
 import br.com.inatel.gamestore.repository.GameRepository;
@@ -24,17 +23,7 @@ public class StoreService {
         return StoreMapper.toGameDtoList(gameRepository.findAll());
     }
 
-    public List<GameDto> findByGamesByCompany(String company){
-        List<Game> games = gameRepository.findByCompany(company);
-
-        if(games.size() == 0){
-            throw new GameNotFoundForThisCompanyException(company);
-        }
-
-        return StoreMapper.toGameDtoList(games);
-    }
-
-    public GameDto findByGamesByName(String name) {
+    public GameDto findGamesByName(String name) {
         Optional<Game> optGame = gameRepository.findByName(name);
 
         if(optGame.isEmpty()){

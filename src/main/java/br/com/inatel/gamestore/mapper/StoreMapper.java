@@ -8,10 +8,6 @@ import java.util.stream.Collectors;
 
 public class StoreMapper {
 
-    public static List<Game> toGameList(List<GameDto> gameDtos){
-        return gameDtos.stream().map(StoreMapper::toGame).collect(Collectors.toList());
-    }
-
     public static List<GameDto> toGameDtoList(List<Game> games) {
         return games.stream().map(StoreMapper::toGameDto).collect(Collectors.toList());
     }

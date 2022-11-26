@@ -26,7 +26,7 @@ public class StoreController {
     @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.OK)
     public GameDto getGamesByGameName(@PathVariable String name){
-        return storeService.findByGamesByName(name);
+        return storeService.findGamesByName(name);
     }
 
     @PostMapping("/create")
