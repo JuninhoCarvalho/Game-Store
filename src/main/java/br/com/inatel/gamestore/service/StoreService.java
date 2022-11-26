@@ -49,4 +49,15 @@ public class StoreService {
 
         return "Game Created!";
     }
+
+    public String deleteGame(String name) {
+        Optional<Game> optionalGame = gameRepository.findByName(name);
+
+        if(optionalGame.isEmpty()){
+            throw new GameNotFound(name);
+        }
+
+        gameRepository.delete(optionalGame.get());
+        return "Jogo Comprado!";
+    }
 }

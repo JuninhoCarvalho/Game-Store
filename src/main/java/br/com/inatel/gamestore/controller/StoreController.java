@@ -10,33 +10,35 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/store")
+@CrossOrigin("*")
+@RequestMapping("/store/games")
 public class StoreController {
 
     @Autowired
     StoreService storeService;
 
-    @GetMapping("/games")
+    @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public List<GameDto> getAllGames(){
         return storeService.findAllGames();
     }
 
-    @GetMapping("/games/company")
-    @ResponseStatus(HttpStatus.OK)
-    public List<GameDto> getGamesByCompany(@RequestParam String company){
-        return storeService.findByGamesByCompany(company);
-    }
-
-    @GetMapping("/games/game/{name}")
+    @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.OK)
     public GameDto getGamesByGameName(@PathVariable String name){
         return storeService.findByGamesByName(name);
     }
 
-    @PostMapping("/games/create")
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public String postNewGame(@RequestBody GameDto gameDto){
         return storeService.createGame(gameDto);
     }
+
+    @DeleteMapping("/buy/{name}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public String buyAGame(@PathVariable String name){
+        return storeService.deleteGame(name);
+    }
+
 }
