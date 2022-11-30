@@ -4,12 +4,10 @@ import br.com.inatel.gamestore.exception.GameNotFound;
 import br.com.inatel.gamestore.model.entity.Game;
 import br.com.inatel.gamestore.model.dto.GameDto;
 import br.com.inatel.gamestore.repository.GameRepository;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
@@ -22,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 public class StoreServiceTest {
 
@@ -37,7 +34,7 @@ public class StoreServiceTest {
     @InjectMocks
     private StoreService storeService = new StoreService();
 
-    @Before
+    @BeforeEach
     public void init(){
         game = Game.builder()
                 .code(1)
