@@ -18,7 +18,7 @@ public class StoreHandler {
 
     @ExceptionHandler(GameNotFound.class)
     @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public Error continentNotFoundException(GameNotFound gameNotFound){
+    public Error gameNotFound(GameNotFound gameNotFound){
         return Error.builder()
                 .httpStatusCode(HttpStatus.NOT_FOUND)
                 .message(gameNotFound.getMessage())

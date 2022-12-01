@@ -23,7 +23,7 @@ export default function Delete() {
         const update = await ClientUsers.deleteUser(data.name);
         console.log('update', update);
         if (update.status === 204) {
-            toast.success('Usuário deletado com sucesso!');
+            toast.success('Jogo comprado com sucesso!');
         } else {
             toast.error('Ops algo deu errado!');
         }
