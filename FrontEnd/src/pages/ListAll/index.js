@@ -57,7 +57,7 @@ export default function ListAll() {
                                             <td>{user.company} </td>
                                             <td>{user.releasedYear} </td>
                                             <td>{user.price} </td>
-                                            <td>{user.imageUrl} </td>
+                                            <td><img src={user.imageUrl} width={100}/> </td>
                                         </tr>
                                     )}
                                 </tbody>
