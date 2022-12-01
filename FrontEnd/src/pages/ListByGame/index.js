@@ -70,7 +70,7 @@ export default function ListByGame() {
                                             <td>{game.company} </td>
                                             <td>{game.releasedYear} </td>
                                             <td>{game.price} </td>
-                                            <td>{game.imageUrl} </td>
+                                            <td> <img src={game.imageUrl} width={100} /> </td>
                                         </tr>
                                     }
                                 </tbody>
